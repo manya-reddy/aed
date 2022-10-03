@@ -37,4 +37,9 @@ public class Viewemployeedetails {
         return newdetails;
     }
     
+    public void deletenewdetails(employeedetails es){
+    view.remove(es);
+    }
+    
 }
+

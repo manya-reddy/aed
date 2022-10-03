@@ -4,6 +4,7 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Viewemployeedetails;
 import model.employeedetails;
@@ -90,6 +91,11 @@ public class Viewjpanel extends javax.swing.JPanel {
         btnview.setText("View");
 
         btndel.setText("Delete");
+        btndel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndelActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Age:");
 
@@ -268,6 +274,28 @@ public class Viewjpanel extends javax.swing.JPanel {
     private void txtemployeeidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemployeeidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtemployeeidActionPerformed
+
+    private void btndelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndelActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRowIndex = tblview.getSelectedRow();
+        
+        if (selectedRowIndex<0) {
+            JOptionPane.showMessageDialog(this, "please select row for deletion.");
+            return;
+        } 
+        
+           DefaultTableModel model = ( DefaultTableModel) tblview.getModel();
+        
+           employeedetails selectedDetails= (employeedetails) model.getValueAt(selectedRowIndex, 0);
+
+           details.deletenewdetails(selectedDetails);
+
+
+JOptionPane.showMessageDialog(this, "Employee details deleted");
+
+        
+    }//GEN-LAST:event_btndelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
