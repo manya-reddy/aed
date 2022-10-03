@@ -291,10 +291,11 @@ public class Viewjpanel extends javax.swing.JPanel {
 
            details.deletenewdetails(selectedDetails);
 
+ 
 
 JOptionPane.showMessageDialog(this, "Employee details deleted");
 
-        
+         populateTable();
     }//GEN-LAST:event_btndelActionPerformed
 
 
